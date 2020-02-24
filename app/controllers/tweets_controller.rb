@@ -6,6 +6,13 @@ class TweetsController < ApplicationController
   end
 
   def create
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      redirect_to root_path
+    else
+      flash.now[:alert] =  '必須を入力してください。'
+      render :new
+    end
   end
 
   def show
@@ -19,4 +26,11 @@ class TweetsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def tweet_params
+    params.permit(:sweetness, :bitter, :acidity, :body)
+  end
+
 end

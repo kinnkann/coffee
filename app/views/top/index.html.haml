@@ -6,3 +6,21 @@
   %li
     = link_to "記録する", tweets_path
 
+%canvas#myChart
+:javascript
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+      labels: ["甘み", "酸味", "苦味", "コク"],
+      datasets: [{
+          backgroundColor: [
+              "#FF1493", //ディープピンク
+              "#FFD700", //ゴールド
+              "#A68C26", //レッド
+              "#800080", //パープル
+          ],
+        data: [80, 90, 60, 70]
+      }],
+    }
+  });

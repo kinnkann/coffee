@@ -1,5 +1,6 @@
 class Tweet < ApplicationRecord
-  t.string :name
-  t.string :text
-  t.text :image
+  validates :sweetness, presence: true
+  validates :bitter, presence: true
+  validates :acidity, presence: true
+  validates :body, presence: true
 end
