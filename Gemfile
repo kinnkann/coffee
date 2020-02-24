@@ -7,6 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2', '>= 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -70,3 +71,5 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'kaminari'
 gem 'devise'
+gem 'jquery-rails'
+gem 'chart-js-rails', '~> 0.1.4'
