@@ -1,20 +1,20 @@
+
+
 %canvas#myChart
 :javascript
   var ctx = document.getElementById("myChart");
   var myChart = new Chart(ctx, {
-    type: 'radar',
+    type: 'polarArea',
     data: {
-      labels: ["甘み", "酸味", "苦味", "コク", "Science"],
+      labels: ["甘み", "酸味", "苦味", "コク"],
       datasets: [{
-        label: 'A_kun',
-        backgroundColor: "rgba(0,0,80,0.4)",
-        borderColor: "rgba(0,0,80,1)",
-        data: [80, 90, 60, 70, 100, 70]
-      }, {
-        label: 'B_kun',
-        backgroundColor: "rgba(0,255,0,0.4)",
-        borderColor: "rgba(0,255,0,1)",
-        data: [90, 75, 80, 65, 80, 70]
-      }]
+          backgroundColor: [
+              "#FF1493", //ディープピンク
+              "#FFD700", //ゴールド
+              "#A68C26", //レッド
+              "#800080", //パープル
+          ],
+        data: [80, 90, 60, 70]
+      }],
     }
   });

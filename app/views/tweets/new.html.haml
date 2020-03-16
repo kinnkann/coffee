@@ -1,15 +1,3 @@
--# .taste
--#   %ul
--#     %li "酸味"
--#     %li "苦味"
--#     %li "甘み"
--#     %li "コク"
-
--# .form
--#   = link_to "戻る", root_path
-
-
-
 .taste-form
   .taste-form__header 味の記録
   = form_with model: @tweet, url: tweets_path, class: "tweets-form", method: :post, local:true do |f|
@@ -35,4 +23,4 @@
           %span.form-require 
         = f.text_field :body, class: "income-textfield-default", value: ""
       = f.submit "登録する", class: "btn-default"
-      = link_to "TOPへもどる", "/", class: "back-btn"
+      = link_to "TOPへもどる", "#", class: "back-btn"

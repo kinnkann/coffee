@@ -5,22 +5,15 @@
 %ul
   %li
     = link_to "記録する", tweets_path
+  %li
+    = link_to "なんかする", root_path
+  %li
+    = link_to "ふざける", root_path
 
-%canvas#myChart
-:javascript
-  var ctx = document.getElementById("myChart");
-  var myChart = new Chart(ctx, {
-    type: 'polarArea',
-    data: {
-      labels: ["甘み", "酸味", "苦味", "コク"],
-      datasets: [{
-          backgroundColor: [
-              "#FF1493", //ディープピンク
-              "#FFD700", //ゴールド
-              "#A68C26", //レッド
-              "#800080", //パープル
-          ],
-        data: [80, 90, 60, 70]
-      }],
-    }
-  });
+.graph
+  = render "top/chart"
+
+.contents.row
+  - @tweets.each do |tweet|
+    = render partial: "chart", locals: { tweet: tweet }
+  -# = paginate(@tweets)
